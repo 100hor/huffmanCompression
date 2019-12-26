@@ -15,11 +15,11 @@ public class HuffmanTree implements Comparable<HuffmanTree> {
         this.root = new Node();
     }
 
-    public HuffmanTree fillHuffmanTree(int []freqArray){
+    public HuffmanTree fillHuffmanTree(int[] freqArray) {
         PriorityQueue<HuffmanTree> treeQueue = new PriorityQueue<>();
-        for (int i = 0; i < freqArray.length; i++){
-            if (freqArray[i] > 0){
-                treeQueue.offer(new HuffmanTree(new Node(freqArray[i], (char)i)));
+        for (int i = 0; i < freqArray.length; i++) {
+            if (freqArray[i] > 0) {
+                treeQueue.offer(new HuffmanTree(new Node(freqArray[i], (char) i)));
             }
         }
         while (treeQueue.size() > 1) {
@@ -31,6 +31,10 @@ public class HuffmanTree implements Comparable<HuffmanTree> {
 
         return treeQueue.poll();
 
+    }
+
+    public Node getRoot() {
+        return root;
     }
 
     @Override
@@ -55,7 +59,9 @@ public class HuffmanTree implements Comparable<HuffmanTree> {
             leftNode = left.root;
             rightNode = right.root;
         }
-        public Node() { }
+
+        public Node() {
+        }
 
         public int getFrequency() {
             return frequency;
