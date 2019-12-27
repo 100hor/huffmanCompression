@@ -31,10 +31,6 @@ public class EncodingTable {
         }
     }
 
-    @Override
-    public String toString() {
-        return encodingArray.toString();
-    }
 
     public HashMap<Character, String> getEncodingArray() {
         return encodingArray;

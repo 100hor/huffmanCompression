@@ -4,7 +4,7 @@ import java.io.*;
 
 public class FileUtils {
 
-    public  void write(String fileName, String text) {
+    public void write(String fileName, String text) {
         File file = new File(fileName);
         try {
             if (!file.exists()) {
@@ -20,7 +20,7 @@ public class FileUtils {
         }
     }
 
-    public  String read(String fileName) throws FileNotFoundException {
+    public String read(String fileName) throws FileNotFoundException {
         StringBuilder sb = new StringBuilder();
         exists(fileName);
         try {
@@ -39,7 +39,7 @@ public class FileUtils {
         return sb.toString();
     }
 
-    public  void update(String nameFile, String newText) throws FileNotFoundException {
+    public void update(String nameFile, String newText) throws FileNotFoundException {
         exists(nameFile);
         StringBuilder sb = new StringBuilder();
         String oldFile = read(nameFile);

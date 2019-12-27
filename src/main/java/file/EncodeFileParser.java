@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EncodeFileParser  implements FileParser<EncodingTable> {
+public class EncodeFileParser implements FileParser<EncodingTable> {
 
     @Override
     public EncodingTable parse(String fileName) {

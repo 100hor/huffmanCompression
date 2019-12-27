@@ -17,8 +17,8 @@ public class EncodeFileWriter {
     public void writeEncodeTable(String fileName) {
         FileUtils fileUtils = new FileUtils();
 
-        for (Map.Entry<Character, String> pair: encodingTable.getEncodingArray().entrySet()){
-            fileUtils.write(fileName, pair.getKey() + ',' + pair.getValue() +'\n');
+        for (Map.Entry<Character, String> pair : encodingTable.getEncodingArray().entrySet()) {
+            fileUtils.write(fileName, pair.getKey() + ',' + pair.getValue() + '\n');
         }
 
     }
