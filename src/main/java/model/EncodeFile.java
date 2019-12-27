@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class EncodeFile {
     private EncodingTable encodingTable;
     private String fileContent;
@@ -13,14 +15,17 @@ public class EncodeFile {
         encodingTable.fillEncodingArray(huffmanTree.getRoot(),"", "");
     }
 
-    private byte[] getFileContentByBytes(){
+    private String getFileContentInString(){
+        StringBuilder huffmanString = new StringBuilder();
+
         for (int i = 0; i < fileContent.length(); i++){
-            fileContent.charAt(i);
+            huffmanString.append(encodingTable.getEncodingArray().get( fileContent.charAt(i)));
         }
 
 
 
 
-        return new byte[]{};
+
+        return huffmanString.toString();
     }
 }

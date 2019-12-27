@@ -39,7 +39,7 @@ public class HuffmanTree implements Comparable<HuffmanTree> {
 
     @Override
     public int compareTo(HuffmanTree o) {
-        return Integer.compare(root.frequency, o.root.frequency);
+        return root.frequency - o.root.frequency;
     }
 
 
