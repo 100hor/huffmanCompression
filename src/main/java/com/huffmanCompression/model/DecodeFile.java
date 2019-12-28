@@ -1,4 +1,4 @@
-package model;
+package com.huffmanCompression.model;
 
 public class DecodeFile {
     private final EncodingTable encodingTable;

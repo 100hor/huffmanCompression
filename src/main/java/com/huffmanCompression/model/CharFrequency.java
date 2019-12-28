@@ -1,4 +1,4 @@
-package model;
+package com.huffmanCompression.model;
 
 public class CharFrequency {
     private final static int ENCODING_TABLE_SIZE = 127;

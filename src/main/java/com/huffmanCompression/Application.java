@@ -1,7 +1,9 @@
-import file.ByteCodeParser;
-import file.EncodeFileParser;
-import model.DecodeFile;
-import model.EncodeFile;
+package com.huffmanCompression;
+
+import com.huffmanCompression.file.ByteCodeParser;
+import com.huffmanCompression.file.EncodeFileParser;
+import com.huffmanCompression.model.DecodeFile;
+import com.huffmanCompression.model.EncodeFile;
 
 import java.io.IOException;
 

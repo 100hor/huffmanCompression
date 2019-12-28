@@ -1,4 +1,4 @@
-package file;
+package com.huffmanCompression.file;
 
 public interface FileParser<T> {
 

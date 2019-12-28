@@ -1,7 +1,6 @@
-package model;
+package com.huffmanCompression.model;
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EncodingTable {

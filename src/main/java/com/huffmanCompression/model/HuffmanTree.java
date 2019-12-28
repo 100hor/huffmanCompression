@@ -1,9 +1,11 @@
-package model;
+package com.huffmanCompression.model;
 
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
-public class HuffmanTree implements Comparable<HuffmanTree> {
+public class HuffmanTree {
     private final Node root;
 
 
@@ -15,8 +17,8 @@ public class HuffmanTree implements Comparable<HuffmanTree> {
         this.root = new Node();
     }
 
-    public HuffmanTree fillHuffmanTree(int[] freqArray) {
-        PriorityQueue<HuffmanTree> treeQueue = new PriorityQueue<>();
+    public static HuffmanTree fillHuffmanTree(int[] freqArray) {
+        Queue<HuffmanTree> treeQueue = new PriorityQueue<>(idComparator);
         for (int i = 0; i < freqArray.length; i++) {
             if (freqArray[i] > 0) {
                 treeQueue.offer(new HuffmanTree(new Node(freqArray[i], (char) i)));
@@ -37,11 +39,7 @@ public class HuffmanTree implements Comparable<HuffmanTree> {
         return root;
     }
 
-    @Override
-    public int compareTo(HuffmanTree o) {
-        return root.frequency - o.root.frequency;
-    }
-
+    public static Comparator<HuffmanTree> idComparator = Comparator.comparingInt(c -> c.getRoot().frequency);
 
     static class Node {
         private int frequency;

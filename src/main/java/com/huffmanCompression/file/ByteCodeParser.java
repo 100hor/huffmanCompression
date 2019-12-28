@@ -1,7 +1,6 @@
-package file;
+package com.huffmanCompression.file;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ByteCodeParser implements FileParser<String> {

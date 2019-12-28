@@ -1,10 +1,10 @@
-package file;
+package com.huffmanCompression.file;
 
 import java.io.*;
 
 public class FileUtils {
 
-    public void write(String fileName, String text) {
+    public static void write(String fileName, String text) {
         File file = new File(fileName);
         try {
             if (!file.exists()) {
@@ -20,17 +20,17 @@ public class FileUtils {
         }
     }
 
-    public String read(String fileName) throws FileNotFoundException {
+    public static String read(String fileName) throws FileNotFoundException {
         StringBuilder sb = new StringBuilder();
         exists(fileName);
         try {
             File file = new File(fileName);
 
             try (BufferedReader in = new BufferedReader(new FileReader(file.getAbsoluteFile()))) {
-                String s;
+                String s = "";
                 while ((s = in.readLine()) != null) {
                     sb.append(s);
-                    sb.append("\n");
+                    //sb.append("\n");
                 }
             }
         } catch (IOException e) {
@@ -39,7 +39,7 @@ public class FileUtils {
         return sb.toString();
     }
 
-    public void update(String nameFile, String newText) throws FileNotFoundException {
+    public static void update(String nameFile, String newText) throws FileNotFoundException {
         exists(nameFile);
         StringBuilder sb = new StringBuilder();
         String oldFile = read(nameFile);

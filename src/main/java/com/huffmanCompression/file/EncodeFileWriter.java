@@ -1,8 +1,7 @@
-package file;
+package com.huffmanCompression.file;
 
-import model.EncodingTable;
+import com.huffmanCompression.model.EncodingTable;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class EncodeFileWriter {
@@ -15,11 +14,11 @@ public class EncodeFileWriter {
 
 
     public void writeEncodeTable(String fileName) {
-        FileUtils fileUtils = new FileUtils();
-
+        StringBuilder encodingMap = new StringBuilder();
         for (Map.Entry<Character, String> pair : encodingTable.getEncodingArray().entrySet()) {
-            fileUtils.write(fileName, pair.getKey() + ',' + pair.getValue() + '\n');
+            encodingMap.append(pair.getKey()).append(',').append(pair.getValue());
         }
+        FileUtils.write(fileName, encodingMap.toString());
 
     }
 

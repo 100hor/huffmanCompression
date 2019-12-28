@@ -1,10 +1,10 @@
-package file;
+package com.huffmanCompression.file;
 
-import model.EncodingTable;
+import com.huffmanCompression.model.EncodingTable;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import static com.huffmanCompression.file.FileUtils.read;
 
 public class EncodeFileParser implements FileParser<EncodingTable> {
 
@@ -13,7 +13,7 @@ public class EncodeFileParser implements FileParser<EncodingTable> {
         try {
             HashMap<Character, String> encodingArray = new HashMap<>();
             FileUtils fileUtils = new FileUtils();
-            String stringData = fileUtils.read(fileName);
+            String stringData = read(fileName);
 
             for (String code : stringData.split("\n")) {
                 encodingArray.put(code.split(",")[0].charAt(0), code.split(",")[1]);
